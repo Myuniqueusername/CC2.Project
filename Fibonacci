@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class ohmaghad {
+    public static void main(String [] args){
+        display();
+    }
+    
+    static int userInput(){
+     Scanner sc = new Scanner(System.in);
+        System.out.print("Input the number: ");
+        int x = sc.nextInt();
+        return x;
+    }
+    static void display(){
+        int x = userInput();
+        
+        System.out.println("");
+        System.out.println("f(" + x + ")");
+        System.out.println("");
+        
+        for(int i=0; i<=x; i++){
+            System.out.print("f(" + i + ")"+ "\t");
+        }
+        System.out.println("");
+        for(int i=0; i<=x; i++){
+            for(int j=0; j<=i; j++ ){
+                System.out.print(fibonnaci(j) + "\t");
+            } System.out.println("");
+        }
+    }
+    static int fibonnaci(int f){
+        if(f<=1){
+            return f;
+        }
+        else{
+            return (fibonnaci(f-1) + fibonnaci(f-2));
+        }
+    }
+    
+}
